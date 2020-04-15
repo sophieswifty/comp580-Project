@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Spacebug Troopers</title>
+  <link rel="icon" type="image/png" href="assets/freezeball_sprite.png" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+  <!-- The game engine -->
+  <script type="text/javascript" src="js/phaser.min.js"></script>
+  <script type="text/javascript" src="js/cameraShake.js"></script>
+  <!-- Underscore.js a library of utility functions. -->
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <!-- The game code -->
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <!-- Two "pixely" fonts that I think would fit the game -->
+  <link
+    href="https://fonts.googleapis.com/css?family=VT323"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+    rel="stylesheet"
+    type="text/css"
+  />
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  <div id="commandModule" class="box">
+    <span id="command-text">Awaiting command...</span>
+  </div>
+  <div id="infoBox" class="box">
+    Oh no! Looks like the Monster stole all the Math Answers! <br />Ex. "<span
+      style="color: #366aff;"
+      >Blue</span
+    >
+    up", "<span style="color: #de4242;">Red</span> move to
+    <span style="color: orange;">Orange</span>"<br />You can also steer the
+    soldiers using the arrow keys, and choosing soldier by pressing 1, 2 and
+    3.<br />Walk on the
+    <img src="assets/freezeball_sprite.png" alt="FreezeStone" /> and say
+    "activate", "freeze" or press E to make the monsters freeze for 2 steps. You
+    can only do this once per game.
+  </div>
+  <div id="scoreBox" class="box">Steps<br /><span id="step-number"></span></div>
+  <div id="highScoreBox" class="box">
+    High Score
+    <ol id="high-score"></ol>
+  </div>
+  <div id="statusBox" class="box">
+    Chosen Soldier poopie
+    <div id="selected-player" class="selected-red"></div>
+  </div>
+</body>
