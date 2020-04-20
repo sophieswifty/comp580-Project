@@ -1,7 +1,7 @@
 # Spacebug Math Game
 
 
-##Link to our Game
+## Link to our Game
 https://sophieswifty.github.io/comp580-Project/
 
 Please note: our game only works on Google Chrome and be sure to turn on Allow Microphone
