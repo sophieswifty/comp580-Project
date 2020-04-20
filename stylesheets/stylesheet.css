@@ -96,7 +96,7 @@ ol {
 
 #infoBox {
   /*height: 450px;*/
-  width: 300px;
+  width: 350px;
   margin-top: 25px;
   right: 50%;
   margin-right: 380px;
@@ -106,7 +106,7 @@ ol {
 
 #scoreBox {
   height: 100px;
-  width: 300px;
+  width: 350px;
   margin-top: 25px;
   left: 50%;
   margin-left: 380px;
@@ -124,7 +124,7 @@ ol {
 }
 
 #highScoreBox {
-  width: 300px;
+  width: 350px;
   margin-top: 150px;
   left: 50%;
   margin-left: 380px;
@@ -134,7 +134,7 @@ ol {
 
 #statusBox {
   height: 300px;
-  width: 300px;
+  width: 350px;
   margin-top: 320px;
   left: 50%;
   margin-left: 380px;

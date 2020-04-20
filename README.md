@@ -1,6 +1,6 @@
-# Space-bug Math
+# Spacebug Math
 ## A voice-controlled HTML5 puzzle game
-
+An accessible children's math game to practice multiplication while simultaneously defending the planet from treacherous spacebugs!
 
 ### Browser support
 Currently this game can only be played on Google Chrome.
