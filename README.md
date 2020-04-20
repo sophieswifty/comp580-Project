@@ -1,6 +1,6 @@
-# Space-bug Troopers
+# Space-bug Math
 ## A voice-controlled HTML5 puzzle game
-To check out the demo please visit <https://rodrigoroarodriguez.github.io/Spacebug-Troopers/>
+A voice controleld math game adapted from Rodrigo https://github.com/RodrigoRoaRodriguez/Spacebug-Troopers
 
 ### Browser support
 Currently this game can only be played on Google Chrome.
