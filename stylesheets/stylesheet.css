@@ -27,6 +27,14 @@ canvas {
   transform: translateY(0px);
 }
 
+h2 {
+  font-size: 16px;
+  }
+
+h3 {
+  font-size: 14px;
+ }
+
 a {
   color: #1e6bb8;
   text-decoration: none;
