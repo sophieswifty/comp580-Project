@@ -56,6 +56,10 @@ var highScore = [100, 101, 102];
 var x_Random = 0;
 var y_Random = 0;
 var answer_array = [];
+var winCheck = 0;
+
+
+
 
 var soldierNames = ['red', 'green', 'blue'];
 var monsterNames = ['black', 'purple', 'orange'];
@@ -110,6 +114,7 @@ function getEquation(){
 	
 	x_Random = Math.floor(Math.random() * 10);
 	y_Random = Math.floor(Math.random() * 10);
+	winCheck = x_Random + y_Random;
 	var answer = x_Random + y_Random;
 	var false_answer1 = Math.floor(Math.random() * 20);
 	var false_answer2 = Math.floor(Math.random() * 20);
@@ -211,8 +216,7 @@ function preload() {
 	game.load.spritesheet('explosion', 'assets/explosion.png', 32,32);
 	game.load.audio('boom_sfx', 'assets/SFX/Explosion.wav');
 	game.load.audio('bonk_sfx', 'assets/SFX/Bonk.wav');
-	// game.load.audio('space_music', ['assets/SFX/Space.mp3', 'assets/SFX/Space.ogg']);
-	game.load.audio('space_music', 'assets/SFX/The Box - 8 Bit Universe');
+	game.load.audio('space_music', ['assets/SFX/Space.mp3', 'assets/SFX/Space.ogg']);
 	game.load.audio('yes_commander', ['assets/SFX/yes_commander.mp3', 'assets/SFX/yes_commander.ogg']);
 	game.load.audio('freeze_sfx', 'assets/SFX/freeze.wav');
 	game.load.audio('monster_move_sfx', 'assets/SFX/monster_move.wav');
