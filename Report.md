@@ -1,3 +1,6 @@
+  # SpaceBug Math
+  ## Final Report - Sophie Swift, Sofia Dimos, and Seth Yook
+  
   We have created a product that serves as an educational and fun math game for children called Space Bug Math. It implements a speech to text function which can be used, as well as the arrow keys, to move your pawns across the board. The goal of the game is to solve the math problem presented, select the Trooper that is associated with the correct answer, and use them to kill the Space Bug. All of the troopers, as well as a freeze element which freezes the monster for two moves, should be used to corner the space bug. It’s important that the correct Trooper is the one to kill the bug; the other Troopers will result in a fail.
 
 
