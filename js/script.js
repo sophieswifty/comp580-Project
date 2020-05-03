@@ -90,10 +90,19 @@ var algorithms = [
   function(x1, y1, x2, y2) {return Math.sqrt(Math.pow((x2-x1),2) +Math.pow((y2-y1),2));}
 ]
 
+
+var x_Random = Math.floor(Math.random() * 10);
+var y_Random = Math.floor(Math.random() * 10);
+var answer = 0;
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // DOM initialization
 ////////////////////////////////////////////////////////////////////////////////
 window.onload = function() {
+	
 	if(localStorage.hs) {
 		loadHighScore();
 	} else {
@@ -101,7 +110,9 @@ window.onload = function() {
 		loadHighScore();
 	}
 }
-
+function getAnswer(){
+	answer_int = x_Random + y_Random;
+}
 
 function loadHighScore() {
 	highScore = JSON.parse(localStorage.hs);
@@ -163,6 +174,9 @@ function preload() {
 
 
 	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
+	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
+	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
+
 	game.load.spritesheet('explosion', 'assets/explosion.png', 32,32);
 	game.load.audio('boom_sfx', 'assets/SFX/Explosion.wav');
 	game.load.audio('bonk_sfx', 'assets/SFX/Bonk.wav');
@@ -226,9 +240,11 @@ function create() {
 	createMonsters();
 	createSoldiers();
 	createFreezeStone();
+	createFreezeStoneTwo();
+	createFreezeStoneThree();
 	createExplosion();
-  createElectricity();
-  createGas();
+ 	createElectricity();
+  	createGas();
 
 	// Text
 	winText = game.add.text(game.world.width/2, game.world.height/2, 'YOU WON!', { font: '60px "Press Start 2P"', fill: "#ff0"});
@@ -352,6 +368,7 @@ function createMonsters() {
 
 function createFreezeStone() {
 	//Create freeze stone
+
 	freezeStones = game.add.group();
 	freezeStones.enableBody = true;
 
@@ -361,11 +378,45 @@ function createFreezeStone() {
 	var freezeStone = freezeStones.create(x, y, 'freezeStone');
 	freezeStone.anchor.setTo(.5, .5);
 	freezeStone.scale.setTo(SCALE);
-
+	
 	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
 	freezeStones.callAll('play', null, 'burn');
-}
 
+}
+function createFreezeStoneTwo() {
+	//Create freeze stone
+
+	freezeStones = game.add.group();
+	freezeStones.enableBody = true;
+
+	var x = 150; //+ (Math.round(Math.random()*3) + 1)*100;
+	var y = 350; //+ (Math.round(Math.random()*3) + 1)*-100;
+	console.log(x,y);
+	var freezeStone = freezeStones.create(x, y, 'freezeStone');
+	freezeStone.anchor.setTo(.5, .5);
+	freezeStone.scale.setTo(SCALE);
+	
+	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
+	freezeStones.callAll('play', null, 'burn');
+
+}
+function createFreezeStoneThree() {
+	//Create freeze stone
+
+	freezeStones = game.add.group();
+	freezeStones.enableBody = true;
+
+	var x = 550; //+ (Math.round(Math.random()*3) + 1)*100;
+	var y = 50; //+ (Math.round(Math.random()*3) + 1)*-100;
+	console.log(x,y);
+	var freezeStone = freezeStones.create(x, y, 'freezeStone');
+	freezeStone.anchor.setTo(.5, .5);
+	freezeStone.scale.setTo(SCALE);
+	
+	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
+	freezeStones.callAll('play', null, 'burn');
+
+}
 function createExplosion() {
 	explosion = game.add.sprite(0, 0, 'explosion');
 	explosion.visible = false;
@@ -677,6 +728,18 @@ function freezeMonsters(numTurns) {
 	}
 }
 
+
+function getRandomx(max) {
+	x = Math.floor(Math.random() * 10);
+	return x;
+  }
+
+function getRandomy(max) {
+	y =  Math.floor(Math.random() * 10);
+	return y;
+  }
+
+
 function explode(x,y){
 	explosion.x = x;
 	explosion.y = y;
@@ -726,6 +789,8 @@ function reset() {
 	createMonsters();
 	createSoldiers();
 	createFreezeStone();
+	createFreezeStoneTwo();
+	createFreezeStoneThree();
 
 	selectPlayer('red');
 	resetVoiceRecognition();
