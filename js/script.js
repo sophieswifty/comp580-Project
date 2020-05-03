@@ -349,7 +349,7 @@ function createMonsters() {
 	var positions = [[50,150], [150,450], [550,350]];
 
 	//Add monsters to group
-	for (var i = 0; i < 3; i++) {
+	for (var i = 0; i < 1; i++) {
 		var x = positions[i][0]; //450 + i*100;
 		var y = positions[i][1]; //550;
 		var monster = monsters.create(x, y, 'monster_'+monsterNames[i]);
