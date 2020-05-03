@@ -34,6 +34,7 @@ var monsterFreezeCount = 0;
  
 var steps = 0;
 var winText;
+var failText;
  
 var explosion;
 var boom_sfx;
@@ -277,6 +278,11 @@ function create() {
    winText = game.add.text(game.world.width/2, game.world.height/2, 'YOU WON!', { font: '60px "Press Start 2P"', fill: "#ff0"});
    winText.anchor.set(0.5);
    winText.visible = false;
+
+   // Fail Text
+   failText = game.add.text(game.world.width/2, game.world.height/2, 'YOU LOST!', { font: '60px "Press Start 2P"', fill: "#ff0"});
+   failText.anchor.set(0.5);
+   failText.visible = false;
  
    // Camera shake plugin
    game.plugins.cameraShake = game.plugins.add(Phaser.Plugin.CameraShake);
@@ -524,7 +530,7 @@ function playerWalk(direction){
            } else if (monsterFreezeCount > 0) {
                monsterFreezeCount--
            }
-           if(!winText.visible){
+           if(!winText.visible && !failText.visible){
                updateScore();
            }
  
@@ -707,15 +713,15 @@ function selectPlayer(color){
    var testDiv = document.getElementById("color_answer");
    if (color == "blue") {
        currentPlayer = 0;
-       testDiv.innerHTML = "Your number is " + answer_array[0];
+       testDiv.innerHTML = answer_array[0];
    }
    if (color == "red") {
        currentPlayer = 1;
-       testDiv.innerHTML = "Your number is " + answer_array[1];
+       testDiv.innerHTML = answer_array[1];
    }
    if (color == "green") {
        currentPlayer = 2;
-       testDiv.innerHTML = "Your number is " + answer_array[2];
+       testDiv.innerHTML = answer_array[2];
    }
  
  
@@ -773,9 +779,11 @@ function reset() {
    monsters.destroy();
    soldiers.destroy();
    freezeStones.destroy();
-   if(winText.visible) {
+   if(winText.visible || failText.visible) {
        winText.visible = false;
+       failText.visible = false;
    }
+
  
    animationRunning = false;
  
@@ -794,15 +802,21 @@ function reset() {
  
 function winCheck() {
     
-   if(monsters.children.length == 0 && !winText.visible) {
+   if(monsters.children.length == 0 && !winText.visible && !failText.visible) {
         if(answer_array[currentPlayer] == realAnswer){
-            alert('You win');
+            // alert('You win!');
+            winText.visible = true;
+            winText.bringToTop();
+            fanfare_sfx.play();
         }else{
-        alert('You lose');
+            // alert('You lose.');
+            failText.visible = true;
+            failText.bringToTop();
+            fanfare_sfx.play();
     }
-       winText.visible = true;
-       winText.bringToTop();
-       fanfare_sfx.play();
+    //    winText.visible = true;
+    //    winText.bringToTop();
+    //    fanfare_sfx.play();
        //saveHighScore();
    }
 }

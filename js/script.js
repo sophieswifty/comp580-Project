@@ -117,11 +117,9 @@ function getEquation(){
    var false_answer2 = Math.floor(Math.random() * 20);
    answer_array = shuffle([answer, false_answer1, false_answer2])
  
- 
    var testDiv = document.getElementById("highScoreBox");
    testDiv.innerHTML = '<span style="font-size: 20px;">Solve the equation: </span>'+ '<br /> <span style="color: #ffffff;font-size:30px">'+x_Random + ' + ' + y_Random +' = ?</span>' + '<!-- <ol id="high-score"></ol> -->'; 
   
- 
 }
  
 function shuffle(array) {
