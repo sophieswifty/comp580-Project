@@ -708,13 +708,13 @@ function selectPlayer(color){
 	//alert(color);
 	var testDiv = document.getElementById("color_answer");
 	if (color == "blue") {
-		testDiv.innerHTML = "Your number is " + answer_array[0];
+		testDiv.innerHTML = answer_array[0];
 	}
 	if (color == "red") {
-		testDiv.innerHTML = "Your number is " + answer_array[1];
+		testDiv.innerHTML = answer_array[1];
 	}
 	if (color == "green") {
-		testDiv.innerHTML = "Your number is " + answer_array[2];
+		testDiv.innerHTML = answer_array[2];
 	}
 
 
