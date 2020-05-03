@@ -53,7 +53,9 @@ var gas;
 var SCALE = 3;
 // High score
 var highScore = [100, 101, 102];
-
+var x_Random = 0;
+var y_Random = 0;
+var answer_array = [];
 
 var soldierNames = ['red', 'green', 'blue'];
 var monsterNames = ['black', 'purple', 'orange'];
@@ -90,19 +92,13 @@ var algorithms = [
   function(x1, y1, x2, y2) {return Math.sqrt(Math.pow((x2-x1),2) +Math.pow((y2-y1),2));}
 ]
 
-
-var x_Random = Math.floor(Math.random() * 10);
-var y_Random = Math.floor(Math.random() * 10);
-var answer = 0;
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // DOM initialization
 ////////////////////////////////////////////////////////////////////////////////
 window.onload = function() {
 	
+	getEquation();
+
 	if(localStorage.hs) {
 		loadHighScore();
 	} else {
@@ -110,9 +106,47 @@ window.onload = function() {
 		loadHighScore();
 	}
 }
-function getAnswer(){
-	answer_int = x_Random + y_Random;
+function getEquation(){
+	
+	x_Random = Math.floor(Math.random() * 10);
+	y_Random = Math.floor(Math.random() * 10);
+	var answer = x_Random + y_Random;
+	var false_answer1 = Math.floor(Math.random() * 20);
+	var false_answer2 = Math.floor(Math.random() * 20);
+	answer_array = shuffle([answer, false_answer1, false_answer2])
+
+
+	var testDiv = document.getElementById("highScoreBox");
+	testDiv.innerHTML = '<span style="font-size: 20px;">Solve the equation: </span>'+ '<br /> <span style="color: #ffffff;font-size:30px">'+x_Random + ' + ' + y_Random +' = ?</span>' + '<!-- <ol id="high-score"></ol> -->';	
+	
+
 }
+
+function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
+  
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+  
+	  // Pick a remaining element...
+	  randomIndex = Math.floor(Math.random() * currentIndex);
+	  currentIndex -= 1;
+  
+	  // And swap it with the current element.
+	  temporaryValue = array[currentIndex];
+	  array[currentIndex] = array[randomIndex];
+	  array[randomIndex] = temporaryValue;
+	}
+  
+	return array;
+  }
+  
+
+
+
+
+
+
 
 function loadHighScore() {
 	highScore = JSON.parse(localStorage.hs);
@@ -174,9 +208,6 @@ function preload() {
 
 
 	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
-	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
-	game.load.spritesheet('freezeStone', 'assets/freezeball_spritesheet.png', 28, 28);
-
 	game.load.spritesheet('explosion', 'assets/explosion.png', 32,32);
 	game.load.audio('boom_sfx', 'assets/SFX/Explosion.wav');
 	game.load.audio('bonk_sfx', 'assets/SFX/Bonk.wav');
@@ -240,11 +271,9 @@ function create() {
 	createMonsters();
 	createSoldiers();
 	createFreezeStone();
-	createFreezeStoneTwo();
-	createFreezeStoneThree();
 	createExplosion();
- 	createElectricity();
-  	createGas();
+  createElectricity();
+  createGas();
 
 	// Text
 	winText = game.add.text(game.world.width/2, game.world.height/2, 'YOU WON!', { font: '60px "Press Start 2P"', fill: "#ff0"});
@@ -368,7 +397,6 @@ function createMonsters() {
 
 function createFreezeStone() {
 	//Create freeze stone
-
 	freezeStones = game.add.group();
 	freezeStones.enableBody = true;
 
@@ -378,45 +406,11 @@ function createFreezeStone() {
 	var freezeStone = freezeStones.create(x, y, 'freezeStone');
 	freezeStone.anchor.setTo(.5, .5);
 	freezeStone.scale.setTo(SCALE);
-	
+
 	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
 	freezeStones.callAll('play', null, 'burn');
-
 }
-function createFreezeStoneTwo() {
-	//Create freeze stone
 
-	freezeStones = game.add.group();
-	freezeStones.enableBody = true;
-
-	var x = 150; //+ (Math.round(Math.random()*3) + 1)*100;
-	var y = 350; //+ (Math.round(Math.random()*3) + 1)*-100;
-	console.log(x,y);
-	var freezeStone = freezeStones.create(x, y, 'freezeStone');
-	freezeStone.anchor.setTo(.5, .5);
-	freezeStone.scale.setTo(SCALE);
-	
-	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
-	freezeStones.callAll('play', null, 'burn');
-
-}
-function createFreezeStoneThree() {
-	//Create freeze stone
-
-	freezeStones = game.add.group();
-	freezeStones.enableBody = true;
-
-	var x = 550; //+ (Math.round(Math.random()*3) + 1)*100;
-	var y = 50; //+ (Math.round(Math.random()*3) + 1)*-100;
-	console.log(x,y);
-	var freezeStone = freezeStones.create(x, y, 'freezeStone');
-	freezeStone.anchor.setTo(.5, .5);
-	freezeStone.scale.setTo(SCALE);
-	
-	freezeStones.callAll('animations.add', 'animations', 'burn', row(0, 5), 10, true);
-	freezeStones.callAll('play', null, 'burn');
-
-}
 function createExplosion() {
 	explosion = game.add.sprite(0, 0, 'explosion');
 	explosion.visible = false;
@@ -711,6 +705,21 @@ function selectPlayer(color){
 	var selectedPlayerDiv = document.getElementById('selected-player');
 	selectedPlayerDiv.className = 'selected-'+color;
 	selectedPlayerDiv.innerHTML = color;
+	//alert(color);
+	var testDiv = document.getElementById("color_answer");
+	if (color == "blue") {
+		testDiv.innerHTML = "Your number is " + answer_array[0];
+	}
+	if (color == "red") {
+		testDiv.innerHTML = "Your number is " + answer_array[1];
+	}
+	if (color == "green") {
+		testDiv.innerHTML = "Your number is " + answer_array[2];
+	}
+
+
+	//testDiv.innerHTML = answer;
+
 }
 
 function freezeMonsters(numTurns) {
@@ -727,18 +736,6 @@ function freezeMonsters(numTurns) {
 		}
 	}
 }
-
-
-function getRandomx(max) {
-	x = Math.floor(Math.random() * 10);
-	return x;
-  }
-
-function getRandomy(max) {
-	y =  Math.floor(Math.random() * 10);
-	return y;
-  }
-
 
 function explode(x,y){
 	explosion.x = x;
@@ -789,8 +786,6 @@ function reset() {
 	createMonsters();
 	createSoldiers();
 	createFreezeStone();
-	createFreezeStoneTwo();
-	createFreezeStoneThree();
 
 	selectPlayer('red');
 	resetVoiceRecognition();
