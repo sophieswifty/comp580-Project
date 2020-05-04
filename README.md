@@ -13,3 +13,9 @@ Oh no! An *evil* bug has invaded the Earth. As the Commander of the Math Trooper
 Use your voice to usher commands for each Math Trooper. You can say things like, "Red Up" or "Blue Right" to guide the Trooper through the Maze. The Monster will be running away from you, so be sure to use all your Troopers to help corner them in! You must only defeat the Monster with the Trooper who holds the right answer, or your Trooper will get seriously hurt! There is also a freeze fruit somewhere on the map. Go to it and yell "Activate" to freeze that pesky monster. 
 
 Ready to play again or want to start over? Simply say "Reset."
+
+
+
+### References
+Music: The Box [Roddy Rich] by 8 Bit Universe
+https://www.youtube.com/watch?v=R1JQ74CdI3Q
