@@ -4,7 +4,7 @@
 ## Link to our Game
 https://sophieswifty.github.io/comp580-Project/
 
-Please note: our game only works on Google Chrome and be sure to turn on Allow Microphone
+Please note: our game only works on Google Chrome with Microphone activated.
 
 ![Alt Text](https://user-images.githubusercontent.com/39540349/80933563-47f1ec00-8d92-11ea-80e8-759ea2a00e2d.png)
 
@@ -33,4 +33,5 @@ Music: The Box [Roddy Rich] by 8 Bit Universe
 https://www.youtube.com/watch?v=R1JQ74CdI3Q
 
 Grid photos: https://opengameart.org/content/vaporwave-grid
+
 https://www.xtrafondos.com/en/wallpaper/5120x2880/4467-retrowave-montanas-de-lineas-estrellas-y-sol.html
