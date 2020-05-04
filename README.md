@@ -6,7 +6,7 @@ https://sophieswifty.github.io/comp580-Project/
 
 Please note: our game only works on Google Chrome and be sure to turn on Allow Microphone
 
-![Alt Text](https://user-images.githubusercontent.com/33109710/80932530-dca61b00-8d8d-11ea-9a8b-bbbc75e23cdf.png)
+![Alt Text](https://user-images.githubusercontent.com/39540349/80933563-47f1ec00-8d92-11ea-80e8-759ea2a00e2d.png)
 
 
 
