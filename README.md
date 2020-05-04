@@ -28,5 +28,9 @@ Ready to play again or want to start over? Simply say "Reset."
 
 ### References
 Original game: https://github.com/RodrigoRoaRodriguez/Spacebug-Troopers
+
 Music: The Box [Roddy Rich] by 8 Bit Universe
 https://www.youtube.com/watch?v=R1JQ74CdI3Q
+
+Grid photos: https://opengameart.org/content/vaporwave-grid
+https://www.xtrafondos.com/en/wallpaper/5120x2880/4467-retrowave-montanas-de-lineas-estrellas-y-sol.html
