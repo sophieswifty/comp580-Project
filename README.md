@@ -16,6 +16,7 @@ Oh no! An *evil* bug has invaded the Earth. As the Commander of the Math Trooper
 ## Goal of the Game
 Solve the equation on the right handside of the screen. Use your voice to cycle through the soldiers as each soldier represents an answer choice. Use your voice to navigate the soldier!
 
+![Alt Text](https://user-images.githubusercontent.com/33109710/80932239-a74cfd80-8d8c-11ea-81c2-4aa5898fd37a.png)
 
 
 ## How to Play
