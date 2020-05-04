@@ -6,6 +6,13 @@ https://sophieswifty.github.io/comp580-Project/
 
 Please note: our game only works on Google Chrome and be sure to turn on Allow Microphone
 
+![Alt Text](https://user-images.githubusercontent.com/33109710/80932103-e169cf80-8d8b-11ea-9fa5-27fc262b0420.png)
+
+
+
+
+
+
 ## A voice-controlled HTML5 math game
 Oh no! An *evil* bug has invaded the Earth. As the Commander of the Math Troopers you have the power to control your Troopers with the sound of your voice! Guide the right Math Trooper to the Monster to Defeat it, but be warned, If you bring the wrong Math Trooper to the monster, they will not be successful. 
 
